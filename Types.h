@@ -1,5 +1,6 @@
 #pragma once
 #include <stdint.h>
+#include <cstddef>
 
 // language int aliases
 using uint = unsigned int;
@@ -24,7 +25,7 @@ using f64 = double;
 
 // char aliases
 using wchar = wchar_t;  // 16 bits on Windows, 32 on most other operating systems.
-using char8 = char8_t;  // UTF-8 char
+using char8 = uint8_t;  // UTF-8 char
 using char16 = char16_t; // UTF-16 char
 using char32 = char32_t; // UTF-32 char
 
@@ -35,7 +36,8 @@ using uintptr = uintptr_t;
 
 // Language defined size types
 using size_t = decltype(sizeof(0)); // Declares platform's size type; 64 bits on all supported platforms
-using ssize_t = int64_t; // Signed version of platform's size type; named ssize_t to distinguish from isize
+using engine_ssize_t = int64_t; // Signed version of platform's size type; named 
+ssize_t to distinguish from isize
 
 // Engine size types.
 using usize = size_t;  // Engine's internal unsigned size type
